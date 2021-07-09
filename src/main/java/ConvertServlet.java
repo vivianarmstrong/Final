@@ -95,6 +95,27 @@ public class ConvertServlet extends HttpServlet {
             newvalue.put ("tsp", String.valueOf(num2));
         }
 
+        //Conversion from tablespoon to milliliters
+        if (TbspAsString != null && TbspAsString.length() > 0) {
+            num1 = (Float.valueOf(TbspAsString).floatValue());
+            n = Math.round(num1 * (float) 100.0);
+            num1 = n/(float)100.0;
+            num2 = (float) (num1 * 14.79);
+            n = Math.round(num2 * (float) 100.0);
+            num2 = n/(float)100.0;
+            newvalue.put ("mL", String.valueOf(num2));
+        }
+
+        //Conversion from milliliters to tablespoon
+        if (mLAsString != null && mLAsString.length() > 0) {
+            num1 = (Float.valueOf(mLAsString).floatValue());
+            n = Math.round(num1 * (float) 100.0);
+            num1 = n/(float)100.0;
+            num2 = (float) (num1 / 14.79);
+            n = Math.round(num2 * (float) 100.0);
+            num2 = n/(float)100.0;
+            newvalue.put ("Tbsp", String.valueOf(num2));
+        }
 
         try (PrintWriter writer = response.getWriter()) {
             writer.println("<!DOCTYPE html><html>");
