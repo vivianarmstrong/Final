@@ -21,7 +21,6 @@ public class ConvertServlet extends HttpServlet {
         String mLAsString = request.getParameter("mL");
         String tspAsString = request.getParameter("tsp");
         String TbspAsString = request.getParameter("Tbsp");
-        String mgAsString = request.getParameter("mg");
         String gAsString = request.getParameter("g");
         String lbAsString = request.getParameter("lb");
         String kgAsString = request.getParameter("kg");
@@ -116,6 +115,73 @@ public class ConvertServlet extends HttpServlet {
             num2 = n/(float)100.0;
             newvalue.put ("Tbsp", String.valueOf(num2));
         }
+
+        //Conversion from grams to ounces
+        if (gAsString != null && gAsString.length() > 0) {
+            num1 = (Float.valueOf(gAsString).floatValue());
+            n = Math.round(num1 * (float) 100.0);
+            num1 = n / (float) 100.0;
+            num2 = (float) (num1 / 28.35);
+            n = Math.round(num2 * (float) 100.0);
+            num2 = n / (float) 100.0;
+            newvalue.put("oz", String.valueOf(num2));
+        }
+
+        //Conversion from ounces to grams
+        if (ozsString != null && ozAsString.length() > 0) {
+            num1 = (Float.valueOf(ozAsString).floatValue());
+            n = Math.round(num1 * (float) 100.0);
+            num1 = n / (float) 100.0;
+            num2 = (float) (num1 * 28.35);
+            n = Math.round(num2 * (float) 100.0);
+            num2 = n / (float) 100.0;
+            newvalue.put("oz", String.valueOf(num2));
+        }
+
+        //Conversion from grams to pounds
+        if (gAsString != null && gAsString.length() > 0) {
+            num1 = (Float.valueOf(gAsString));
+            n = Math.round(num1 * (float) 100.0);
+            num1 = n / (float) 100.0;
+            num2 = num1 / 454;
+            n = Math.round(num2 * (float) 100.0);
+            num2 = n / (float) 100.0;
+            newvalue.put("lb", String.valueOf(num2));
+        }
+
+        //Conversion from pounds to grams
+        if (lbAsString != null && lbAsString.length() > 0) {
+            num1 = (Float.valueOf(lbAsString).floatValue());
+            n = Math.round(num1 * (float) 100.0);
+            num1 = n / (float) 100.0;
+            num2 = num1 * 454;
+            n = Math.round(num2 * (float) 100.0);
+            num2 = n / (float) 100.0;
+            newvalue.put("grams", String.valueOf(num2));
+        }
+
+        //Conversion from pounds to kilograms
+        if (lbAsString != null && lbAsString.length() > 0) {
+            num1 = (Float.valueOf(lbAsString).floatValue());
+            n = Math.round(num1 * (float) 100.0);
+            num1 = n / (float) 100.0;
+            num2 = (float) (num1 * 0.454);
+            n = Math.round(num2 * (float) 100.0);
+            num2 = n / (float) 100.0;
+            newvalue.put("kg", String.valueOf(num2));
+        }
+
+        //Conversion from kilograms to pounds
+        if (kgAsString != null && kgAsString.length() > 0) {
+            num1 = (Float.valueOf(kgAsString));
+            n = Math.round(num1 * (float) 100.0);
+            num1 = n / (float) 100.0;
+            num2 = (float) (num1 / 28.35);
+            n = Math.round(num2 * (float) 100.0);
+            num2 = n / (float) 100.0;
+            newvalue.put("lb", String.valueOf(num2));
+        }
+
 
         try (PrintWriter writer = response.getWriter()) {
             writer.println("<!DOCTYPE html><html>");
