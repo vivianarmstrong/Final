@@ -17,17 +17,6 @@ public class ConvertServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-    try (PrintWriter writer = response.getWriter()) {
-        writer.println("<!DOCTYPE html><html>");
-        writer.println("<head>");
-        writer.println("<meta charset=\"UTF-8\" />");
-        writer.println("<title>Kitchen Measurement Converter</title>");
-        writer.println("</head>");
-        writer.println("<body>");
-        writer.println("<h1>Convert your kitchen measurements.</h1>");
-        writer.println("</body>");
-        writer.println("</html>");
-
         int n;
         float num1, num2;
 
