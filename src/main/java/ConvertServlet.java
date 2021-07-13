@@ -91,20 +91,8 @@ public class ConvertServlet extends HttpServlet {
             out.println(num2 + " milliliters");
         }
 
-        //Conversion from milliliters to tsp
-        String TbspAsString = request.getParameter("Tbsp");
-        if (mLAsString != null && mLAsString.length() > 0) {
-            num1 = (Float.parseFloat(mLAsString));
-            n = Math.round(num1 * (float) 100.0);
-            num1 = n / (float) 100.0;
-            num2 = (float) (num1 / 4.93);
-            n = Math.round(num2 * (float) 100.0);
-            num2 = n / (float) 100.0;
-            out.println(num2 + " teaspoon");
-        }
-
         //Conversion from tablespoon to milliliters
-        String gAsString = request.getParameter("g");
+        String TbspAsString = request.getParameter("Tbsp");
         if (TbspAsString != null && TbspAsString.length() > 0) {
             num1 = (Float.parseFloat(TbspAsString));
             n = Math.round(num1 * (float) 100.0);
@@ -116,9 +104,9 @@ public class ConvertServlet extends HttpServlet {
         }
 
         //Conversion from milliliters to tablespoon
-        String lbAsString = request.getParameter("lb");
-        if (mLAsString != null && mLAsString.length() > 0) {
-            num1 = (Float.parseFloat(mLAsString));
+        String miLAsString = request.getParameter("miL");
+        if (miLAsString != null && miLAsString.length() > 0) {
+            num1 = (Float.parseFloat(miLAsString));
             n = Math.round(num1 * (float) 100.0);
             num1 = n / (float) 100.0;
             num2 = (float) (num1 / 14.79);
@@ -128,7 +116,7 @@ public class ConvertServlet extends HttpServlet {
         }
 
         //Conversion from grams to ounces
-        String kgAsString = request.getParameter("kg");
+        String gAsString = request.getParameter("g");
         if (gAsString != null && gAsString.length() > 0) {
             num1 = (Float.parseFloat(gAsString));
             n = Math.round(num1 * (float) 100.0);
@@ -140,8 +128,9 @@ public class ConvertServlet extends HttpServlet {
         }
 
         //Conversion from ounces to grams
-        if (ozAsString != null && ozAsString.length() > 0) {
-            num1 = (Float.parseFloat(ozAsString));
+        String ozsAsString = request.getParameter("ozs");
+        if (ozsAsString != null && ozsAsString.length() > 0) {
+            num1 = (Float.parseFloat(ozsAsString));
             n = Math.round(num1 * (float) 100.0);
             num1 = n / (float) 100.0;
             num2 = (float) (num1 * 28.35);
@@ -151,8 +140,8 @@ public class ConvertServlet extends HttpServlet {
         }
 
         //Conversion from grams to pounds
-        if (gAsString != null && gAsString.length() > 0) {
-            num1 = (Float.parseFloat(gAsString));
+        if (grAsString != null && grAsString.length() > 0) {
+            num1 = (Float.parseFloat(grAsString));
             n = Math.round(num1 * (float) 100.0);
             num1 = n / (float) 100.0;
             num2 = num1 / 454;
@@ -173,8 +162,8 @@ public class ConvertServlet extends HttpServlet {
         }
 
         //Conversion from pounds to kilograms
-        if (lbAsString != null && lbAsString.length() > 0) {
-            num1 = (Float.parseFloat(lbAsString));
+        if (lbsAsString != null && lbsAsString.length() > 0) {
+            num1 = (Float.parseFloat(lbsAsString));
             n = Math.round(num1 * (float) 100.0);
             num1 = n / (float) 100.0;
             num2 = (float) (num1 * 0.454);
