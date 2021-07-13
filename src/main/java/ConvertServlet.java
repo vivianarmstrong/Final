@@ -31,6 +31,8 @@ public class ConvertServlet extends HttpServlet {
         int n;
         float num1, num2;
 
+        Properties newvalue = new Properties ();
+
         //Conversion from gallons to liters
         String galAsString = request.getParameter("gal");
         if (galAsString != null && galAsString.length() > 0) {
@@ -40,7 +42,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 * 3.785);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " liters" );
+            newvalue.put(String.valueOf(num2), " liters" );
         }
 
         //Conversion from liters to gallons
@@ -52,7 +54,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 / 3.785);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " gallons");
+            newvalue.put(String.valueOf(num2), " gallons");
         }
 
         //Conversion from ounces to milliliters
@@ -64,7 +66,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 * 29.57);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " milliliters");
+            newvalue.put(String.valueOf(num2), " milliliters");
         }
 
         //Conversion from milliliters to ounces
@@ -76,7 +78,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 / 29.57);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " ounces");
+            newvalue.put(String.valueOf(num2), " ounces");
         }
 
         //Conversion from tsp to milliliters
@@ -88,7 +90,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 * 4.93);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " milliliters");
+            newvalue.put(String.valueOf(num2), " milliliters");
         }
 
         //Conversion from tablespoon to milliliters
@@ -100,7 +102,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 * 14.79);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " milliliters");
+            newvalue.put(String.valueOf(num2), " milliliters");
         }
 
         //Conversion from milliliters to tablespoon
@@ -112,7 +114,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 / 14.79);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " Tablespoons");
+            newvalue.put(String.valueOf(num2), " Tablespoons");
         }
 
         //Conversion from grams to ounces
@@ -124,7 +126,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 / 28.35);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " ounces");
+            newvalue.put(String.valueOf(num2), " ounces");
         }
 
         //Conversion from ounces to grams
@@ -136,7 +138,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 * 28.35);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " grams");
+            newvalue.put(String.valueOf(num2), " grams");
         }
 
         //Conversion from grams to pounds
@@ -147,7 +149,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = num1 / 454;
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " pounds");
+            newvalue.put(String.valueOf(num2), " pounds");
         }
 
         //Conversion from pounds to grams
@@ -158,7 +160,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = num1 * 454;
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " grams");
+            newvalue.put(String.valueOf(num2), " grams");
         }
 
         //Conversion from pounds to kilograms
@@ -169,7 +171,7 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 * 0.454);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " kilograms");
+            newvalue.put(String.valueOf(num2), " kilograms");
         }
 
         //Conversion from kilograms to pounds
@@ -180,8 +182,9 @@ public class ConvertServlet extends HttpServlet {
             num2 = (float) (num1 / 0.454);
             n = Math.round(num2 * (float) 100.0);
             num2 = n / (float) 100.0;
-            out.println(num2 + " pounds");
+            newvalue.put(String.valueOf(num2), " pounds");
         }
+        PrintForm (response, newvalue);
         out.close();
     }
 
