@@ -70,5 +70,7 @@
     <orderEntry type="library" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:2.1.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-transports-http:3.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-security:3.4.2" level="project" />
+    <orderEntry type="library" name="tomcat-api" level="project" />
+    <orderEntry type="library" name="tomcat-servlet-api-9.0.4" level="project" />
   </component>
 </module>
