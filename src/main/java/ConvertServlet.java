@@ -1,3 +1,5 @@
+package src.main.java.ConvertServlet; jetbrains://idea/navigate/reference?project=Final&path=src/main/java/ConvertServlet.java
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +18,7 @@ public class ConvertServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-
+        String name = request.getParameter("measurement");
         int n;
         float num1, num2;
 

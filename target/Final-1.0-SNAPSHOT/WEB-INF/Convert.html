@@ -10,40 +10,26 @@
     <label>Amount to convert</label>
     <input name="num1" type="text" />
     <div>
-        <p>
-        <label> Choose measurement to convert
-            <br />
-            <input type="radio" name="gal" value="gal" />Gallon to Liter
-            <br />
-            <input type="radio" name="Ltr" value="Ltr" />Liter to Gallon
-            <br />
-            <input type="radio" name="oz" value="oz" />Ounce to Milliliter
-            <br />
-            <input type="radio" name="mL" value="mL" />Milliliter to Ounce
-            <br />
-            <input type="radio" name="tsp" value="tsp" />Teaspoon to Milliliter
-            <br />
-            <input type="radio" name="Tbsp" value="Tbsp" />Tablespoon to Milliliter
-            <br />
-            <input type="radio" name="miL" value="miL" />Milliliter to Tablespoon
-            <br />
-            <input type="radio" name="g" value="g" />Gram to Ounces
-            <br />
-            <input type="radio" name="ozs" value="ozs" />Ounces to Gram
-            <br />
-            <input type="radio" name="gr" value="gr" />Gram to Pound
-            <br />
-            <input type="radio" name="lb" value="lb" />Pound to Gram
-            <br />
-            <input type="radio" name="lbs" value="lbs" />Pound to Kilogram
-            <br />
-            <input type="radio" name="kg" value="kg" />Kilogram to Pound
-            <br />
+        <label> Choose conversion
+            <select name="conversion">
+                <option value=""></option>
+                <option name="measurement" value="gal">Gallon to Liter</option>
+                <option name="measurement" value="Ltr">Liter to Gallon</option>
+                <option name="measurement" value="oz">Ounce to Milliliter</option>
+                <option name="measurement" value="mL">Milliliter to Ounce</option>
+                <option name="measurement" value="tsp">Teaspoon to Milliliter</option>
+                <option name="measurement" value="Tbsp">Tablespoon to Milliliter</option>
+                <option name="measurement" value="miL">Milliliter to Tablespoon</option>
+                <option name="measurement" value="g">Gram to Ounces</option>
+                <option name="measurement" value="ozs">Ounces to Gram</option>
+                <option name="measurement" value="gr">Gram to Pound</option>
+                <option name="measurement" value="lb">Pound to Gram</option>
+                <option name="measurement" value="lbs">Pound to Kilogram</option>
+                <option name="measurement" value="kg">Kilogram to Pound</option>
+            </select>
         </label>
-        </p>
-
     </div>
-    <br />
+
     <input type="submit" value="Convert">
 
 </form>
