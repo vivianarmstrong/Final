@@ -176,14 +176,23 @@ public class ConvertServlet extends HttpServlet {
             newvalue.put(String.valueOf(num2), " pounds");
         }
         PrintForm (response, newvalue);
+
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Cooking Conversion</title>");
+        out.println("</head>");
+        out.println("<body>")
+        out.println("<h3>" newvalue "</h3>");
+        out.println("</body>");
+        out.println("</html>");
+
         out.close();
     }
-
-
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+        PrintHead (response);
         System.out.println("This resource is not available directly");
     }
 }
