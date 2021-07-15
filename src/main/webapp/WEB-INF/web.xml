@@ -11,4 +11,12 @@
         <servlet-name>ConvertServlet</servlet-name>
         <url-pattern>/ConvertServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ConvertTest</servlet-name>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConvertTest</servlet-name>
+        <url-pattern>/ConvertTest</url-pattern>
+    </servlet-mapping>
 </web-app>

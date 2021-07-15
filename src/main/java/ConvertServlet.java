@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.lang.*;
 import java.util.*;
 
-@WebServlet(name = "/ConvertServlet", value = "/ConvertServlet")
+@WebServlet(name = "ConvertServlet", value = "/ConvertServlet")
 
 public class ConvertServlet extends HttpServlet {
     @Override
@@ -18,7 +18,7 @@ public class ConvertServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        String name = request.getParameter("measurement");
+        String name = request.getParameterNames("num1", "measurement");
         int n;
         float num1, num2;
 
