@@ -18,7 +18,7 @@ public class ConvertServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        String name = request.getParameterNames("num1", "measurement");
+        String name = request.getParameterNames("num1");
         int n;
         float num1, num2;
 
@@ -133,6 +133,7 @@ public class ConvertServlet extends HttpServlet {
         }
 
         //Conversion from grams to pounds
+        String grAsString = request.getParameter("gr");
         if (grAsString != null && grAsString.length() > 0) {
             num1 = (Float.parseFloat(grAsString));
             n = Math.round(num1 * (float) 100.0);
@@ -144,6 +145,7 @@ public class ConvertServlet extends HttpServlet {
         }
 
         //Conversion from pounds to grams
+        String lbAsString = request.getParameter("lb");
         if (lbAsString != null && lbAsString.length() > 0) {
             num1 = (Float.parseFloat(lbAsString));
             n = Math.round(num1 * (float) 100.0);
@@ -155,6 +157,7 @@ public class ConvertServlet extends HttpServlet {
         }
 
         //Conversion from pounds to kilograms
+        String lbsAsString = request.getParameter("lbs");
         if (lbsAsString != null && lbsAsString.length() > 0) {
             num1 = (Float.parseFloat(lbsAsString));
             n = Math.round(num1 * (float) 100.0);
@@ -166,6 +169,7 @@ public class ConvertServlet extends HttpServlet {
         }
 
         //Conversion from kilograms to pounds
+        String kgAsString = request.getParameter("kg");
         if (kgAsString != null && kgAsString.length() > 0) {
             num1 = (Float.parseFloat(kgAsString));
             n = Math.round(num1 * (float) 100.0);
@@ -181,7 +185,7 @@ public class ConvertServlet extends HttpServlet {
         out.println("<head>");
         out.println("<title>Cooking Conversion</title>");
         out.println("</head>");
-        out.println("<body>")
+        out.println("<body>");
         out.println("<h3>" newvalue "</h3>");
         out.println("</body>");
         out.println("</html>");

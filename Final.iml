@@ -79,9 +79,10 @@
     <orderEntry type="library" name="Maven: jakarta.ws.rs:jakarta.ws.rs-api:2.1.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-transports-http:3.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-security:3.4.2" level="project" />
-    <orderEntry type="library" name="Maven: org.mockito:mockito-core:3.11.1" level="project" />
-    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.11.2" level="project" />
-    <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy-agent:1.11.2" level="project" />
-    <orderEntry type="library" name="Maven: org.objenesis:objenesis:3.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-core:3.11.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy:1.11.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.bytebuddy:byte-buddy-agent:1.11.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.objenesis:objenesis:3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
   </component>
 </module>

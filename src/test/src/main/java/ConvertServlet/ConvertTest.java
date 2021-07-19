@@ -1,12 +1,23 @@
 package src.main.java.ConvertServlet;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.*;
 
-import org.junit.jupiter.api.Test;
-import javax.servlet.*;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
-public class ConvertTest {
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.junit.Test;
+import org.mockito.Mockito;
+
+public class ConvertTest extends Mockito{
 
     @Test
-    public void testConvertTest() {
+    public void testConvertTest() throws Exception {
+        HttpServletRequest request = mock(HttpServletRequest.class);
+        HttpServletResponse response = mock(HttpServletResponse.class);
+        when(request.getParameter)
 
     }
 }
