@@ -20,8 +20,10 @@ public class ConvertServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
+        Scanner console = new Scanner(System.in);
         int n;
-        float num1, num2;
+        float num2;
+        float num1 = Float.parseFloat(request.getParameter("num1"));
 
         Properties newvalue = new Properties ();
 
@@ -180,6 +182,16 @@ public class ConvertServlet extends HttpServlet {
             num2 = n / (float) 100.0;
             newvalue.put(String.valueOf(num2), " pounds");
         }
+
+        try {
+            System.out.println("Amount to convert: ");
+            num1 = console.nextInt();
+
+            System.out.println("Choose the conversion.");
+        }
+        catch (InputMismatchException ex) {
+            System.out.println("Please enter a number.");
+        }
         PrintForm (response, newvalue);
 
         out.println("<html>");
@@ -187,7 +199,6 @@ public class ConvertServlet extends HttpServlet {
         out.println("<title>Cooking Conversion</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<h3>"newvalue"</h3>");
         out.println("</body>");
         out.println("</html>");
 
@@ -197,6 +208,8 @@ public class ConvertServlet extends HttpServlet {
     private void PrintForm(HttpServletResponse response, Properties newvalue) {
         this.response = response;
     }
+
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
