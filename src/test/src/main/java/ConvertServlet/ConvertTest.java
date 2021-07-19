@@ -6,5 +6,7 @@ import javax.servlet.*;
 public class ConvertTest {
 
     @Test
-    public void test testConvertTest() {}
+    public void testConvertTest() {
+
+    }
 }
