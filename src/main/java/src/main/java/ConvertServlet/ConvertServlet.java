@@ -1,4 +1,4 @@
-package src.main.java.ConvertServlet; jetbrains://idea/navigate/reference?project=Final&path=src/main/java/ConvertServlet.java
+package src.main.java.ConvertServlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,12 +13,13 @@ import java.util.*;
 @WebServlet(name = "ConvertServlet", value = "/ConvertServlet")
 
 public class ConvertServlet extends HttpServlet {
+    private HttpServletResponse response;
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        String name = request.getParameterNames("num1");
         int n;
         float num1, num2;
 
@@ -186,11 +187,15 @@ public class ConvertServlet extends HttpServlet {
         out.println("<title>Cooking Conversion</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<h3>" newvalue "</h3>");
+        out.println("<h3>"newvalue"</h3>");
         out.println("</body>");
         out.println("</html>");
 
         out.close();
+    }
+
+    private void PrintForm(HttpServletResponse response, Properties newvalue) {
+        this.response = response;
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -198,5 +203,9 @@ public class ConvertServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         PrintHead (response);
         System.out.println("This resource is not available directly");
+    }
+
+    private void PrintHead(HttpServletResponse response) {
+        this.response = response;
     }
 }
